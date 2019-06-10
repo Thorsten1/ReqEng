@@ -14,7 +14,7 @@
 body {
     height: 100%;
     font-family: 'Poppins', sans-serif;
-    background-image: linear-gradient(#472B6D,#461D7F,#520AB7,#3C2C76,#2E1B74,#240B7F);
+    background-image: linear-gradient(#472B6D,#240B7F);
     box-sizing: content-box !important;
 }
 
