@@ -1,11 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default class SmartHome extends React.Component {
+export default class Statistik extends React.Component {
   render(){
     return (
       <View style={styles.container}>
-        <Text style={styles.text}>Hello From the SmartHome side! </Text>
+        <Text style={styles.text}>Hello From the Statistik side! </Text>
       </View>
     );
   }

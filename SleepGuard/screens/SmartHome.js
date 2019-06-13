@@ -1,11 +1,13 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import MenuButton from '../components/MenuButton'
 
-export default class Wecker extends React.Component {
+export default class SmartHome extends React.Component {
   render(){
     return (
       <View style={styles.container}>
-        <Text style={styles.text}>Hello From the Wecker side! </Text>
+        <MenuButton navigation={this.props.navigation} />
+        <Text style={styles.text}>Hello From the SmartHome side! </Text>
       </View>
     );
   }
