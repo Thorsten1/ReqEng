@@ -31,7 +31,7 @@ export default class MenuDrawer extends React.Component{
 					{this.navLink('Wecker' ,'Wecker')}
 					{this.navLink('Einschlafhilfe' ,'Einschlafhilfe')}
 					{this.navLink('PowerNap' ,'Power Nap')}
-					{this.navLink('Statsitik' ,'Statistik')}
+					{this.navLink('Statistik' ,'Statistik')}
 					{this.navLink('Kalender' ,'Kalender')}
 					{this.navLink('SmartHome' ,'Smarthome')}
 					{this.navLink('Community' ,'Community')}
