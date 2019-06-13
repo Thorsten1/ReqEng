@@ -3,7 +3,8 @@
 Basic Alarm App in Plain HTML and JavaScript. Using Bootstrap and FontAwesome Icons.
 
 ### ToDos
-- [ ] impplement basic menu and navigation <i>Thorsten</i>
+
+- [x] impplement basic menu and navigation <i>Thorsten</i>
 - [ ] implement "Wecker" Page <i>Thomas</i>
 - [ ] implement "Einschlafhilfe" Page <i>Johann</i>
 - [ ] finish "Power Nap" Page <i>Karsten</i>
