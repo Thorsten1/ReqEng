@@ -44,7 +44,7 @@ export default class PowerNap extends React.Component {
 				}}
 			>
 			<DialogContent>
-				<Text style={{position:'absolute', top:40, textAlign:'center', fontSize:50}}> PowerNap </Text>
+				<Text style={{fontSize:40, margin: 40,}}> PowerNap </Text>
 			
 				<CountDown
 					until={60 * this.state.value}
