@@ -12,7 +12,12 @@ export default class PowerNap extends React.Component {
     return (
       <View style={styles.container}>
 
-          <Text style={styles.paragraph}>  {this.state.value} Minuten</Text>
+      {/*Header Section*/}
+        <MenuButton navigation={this.props.navigation} />
+        <Text style={{position:'absolute', top:40, textAlign:'center', fontSize:20}}> Wecker </Text>
+        <MenuNotifications/>
+      {/*Content*/}
+        <Text style={styles.paragraph}>  {this.state.value} Minuten</Text>
         
         <Slider style={styles.paragraph}
         minimumValue= {5}
