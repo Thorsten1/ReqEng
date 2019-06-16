@@ -18,19 +18,19 @@ export default class PowerNap extends React.Component {
     return (
       <View style={styles.container}>
 
-      {/*Header Section*/}
+		{/*Header Section*/}
         <MenuButton navigation={this.props.navigation} />
         <Text style={{position:'absolute', top:40, textAlign:'center', fontSize:20}}> PowerNap </Text>
         <MenuNotifications/>
-      {/*Content*/}
+		{/*Content*/}
         <Text style={styles.paragraph}>  {this.state.value} Minuten</Text>
         
         <Slider style={styles.paragraph}
-        minimumValue= {5}
-        maximumValue = {20}
-        step = {1}
-        value={this.state.value}
-        onValueChange={value => this.setState({ value })}
+			minimumValue= {5}
+			maximumValue = {20}
+			step = {1}
+			value={this.state.value}
+			onValueChange={value => this.setState({ value })}
         />
         
         <Button onPress = {this.buttonClickListener}
@@ -38,24 +38,24 @@ export default class PowerNap extends React.Component {
         />
 		
 		<Dialog
-		visible={this.state.visible}
-		onTouchOutside={() => {
-		this.setState({ visible: false });
-		}}
-		>
-		<DialogContent>
-			<Text> PowerNap 
-			 </Text>
-			<CountDown
-			until={60 * this.state.value}
-			size={50}
-			onFinish={() => alert('Finished')}
-			digitStyle={{backgroundColor: '#000'}}
-			digitTxtStyle={{color: '#fff'}}
-			timeToShow={['M', 'S']}
-			timeLabels={{m: 'Min', s: 'Sek'}}
-		/>
-		</DialogContent>
+			visible={this.state.visible}
+				onTouchOutside={() => {
+					this.setState({ visible: false });
+				}}
+			>
+			<DialogContent>
+				<Text style={{position:'absolute', top:40, textAlign:'center', fontSize:50}}> PowerNap </Text>
+			
+				<CountDown
+					until={60 * this.state.value}
+					size={50}
+					onFinish={() => alert('Finished')}
+					digitStyle={{backgroundColor: '#000'}}
+					digitTxtStyle={{color: '#fff'}}
+					timeToShow={['M', 'S']}
+					timeLabels={{m: 'Min', s: 'Sek'}}
+				/>
+			</DialogContent>
 		</Dialog>
       </View>
     );
