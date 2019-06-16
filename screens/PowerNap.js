@@ -20,7 +20,7 @@ export default class PowerNap extends React.Component {
 
 		{/*Header Section*/}
         <MenuButton navigation={this.props.navigation} />
-        <Text style={{position:'absolute', top:40, textAlign:'center', fontSize:20}}> PowerNap </Text>
+        
         <MenuNotifications/>
 		{/*Content*/}
         <Text style={styles.paragraph}>  {this.state.value} Minuten</Text>
