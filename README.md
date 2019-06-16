@@ -1,6 +1,6 @@
 # SleepGuard
 
-Basic Alarm App in Plain HTML and JavaScript. Using Bootstrap and FontAwesome Icons.
+Basic Alarm App in ReactNative
 
 ### ToDos
 
