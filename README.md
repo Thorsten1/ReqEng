@@ -7,8 +7,8 @@ Basic Alarm App in Plain HTML and JavaScript. Using Bootstrap and FontAwesome Ic
 - [x] impplement basic menu and navigation <i>Thorsten</i>
 - [ ] implement "Wecker" Page <i>Thomas</i>
 - [ ] implement "Einschlafhilfe" Page <i>Johann</i>
-- [ ] finish "Power Nap" Page <i>Karsten</i>
-- [ ] implement "Statistik" Page <i>Steffen</i>
+- [x] finish "Power Nap" Page <i>Steffen</i>
+- [ ] implement "Statistik" Page <i>Karsten</i>
 - [ ] implement "Kalender" Page
 - [ ] implement "Community" Page <i>Thorsten</i>
 - [ ] implement "SmartHome" Page <i>Thorsten</i>
