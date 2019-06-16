@@ -1,11 +1,17 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, Slider } from 'react-native';
+//imports for header Buttons
+import MenuButton from '../components/MenuButton'
+import MenuNotifications from '../components/MenuNotifications'
+import Dialog, { DialogContent } from 'react-native-popup-dialog';
+import CountDown from 'react-native-countdown-component';
+
 
 export default class PowerNap extends React.Component {
-  state = {value: 5}
+  state = {value: 5, visible: false}
 
   buttonClickListener = () =>{
-    alert(this.state.value)
+    this.setState({ visible: true });
   }
 
   render(){
@@ -14,7 +20,7 @@ export default class PowerNap extends React.Component {
 
       {/*Header Section*/}
         <MenuButton navigation={this.props.navigation} />
-        <Text style={{position:'absolute', top:40, textAlign:'center', fontSize:20}}> Wecker </Text>
+        <Text style={{position:'absolute', top:40, textAlign:'center', fontSize:20}}> PowerNap </Text>
         <MenuNotifications/>
       {/*Content*/}
         <Text style={styles.paragraph}>  {this.state.value} Minuten</Text>
@@ -27,10 +33,30 @@ export default class PowerNap extends React.Component {
         onValueChange={value => this.setState({ value })}
         />
         
-        <Button onPress = {this.buttonClickListener} style={styles.paragraph}
+        <Button onPress = {this.buttonClickListener}
           title="Start"
         />
-
+		
+		<Dialog
+		visible={this.state.visible}
+		onTouchOutside={() => {
+		this.setState({ visible: false });
+		}}
+		>
+		<DialogContent>
+			<Text> PowerNap 
+			 </Text>
+			<CountDown
+			until={60 * this.state.value}
+			size={50}
+			onFinish={() => alert('Finished')}
+			digitStyle={{backgroundColor: '#000'}}
+			digitTxtStyle={{color: '#fff'}}
+			timeToShow={['M', 'S']}
+			timeLabels={{m: 'Min', s: 'Sek'}}
+		/>
+		</DialogContent>
+		</Dialog>
       </View>
     );
   }
