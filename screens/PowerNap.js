@@ -1,7 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { Button } from 'react-native-elements';
-import { Slider } from 'react-native-elements';
+import { StyleSheet, Text, View, Button, Slider } from 'react-native';
 
 export default class PowerNap extends React.Component {
   state = {value: 5}
@@ -16,7 +14,7 @@ export default class PowerNap extends React.Component {
 
           <Text style={styles.paragraph}>  {this.state.value} Minuten</Text>
         
-        <Slider
+        <Slider style={styles.paragraph}
         minimumValue= {5}
         maximumValue = {20}
         step = {1}
@@ -24,7 +22,7 @@ export default class PowerNap extends React.Component {
         onValueChange={value => this.setState({ value })}
         />
         
-        <Button onPress = {this.buttonClickListener}
+        <Button onPress = {this.buttonClickListener} style={styles.paragraph}
           title="Start"
         />
 
