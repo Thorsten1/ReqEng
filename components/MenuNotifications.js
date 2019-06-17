@@ -7,7 +7,7 @@ export default class MenuNotifications extends React.Component{
 		return(
 		<Ionicons
 			name="md-notifications"
-			color="#000"
+			color="#FFF"
 			size={32}
 			style={styles.menuIcon}
 			onPress={() => this.props.navigation.toggleDrawer()}
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
 		zIndex:9,
 		position:'absolute',
 		top:40,
-		right:20,	
+		right:20,
 	}
 
 })

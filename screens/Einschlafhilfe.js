@@ -1,11 +1,19 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+//imports for header Buttons
+import MenuButton from '../components/MenuButton'
+import MenuNotifications from '../components/SettingButton'
 
 export default class Einschlafhilfe extends React.Component {
   render(){
     return (
       <View style={styles.container}>
-        <Text style={styles.text}>Hello From the Sleeping side! </Text>
+        {/*Header Section*/}
+        <MenuButton navigation={this.props.navigation} />
+        <Text style={{position:'absolute', top:40, textAlign:'center', fontSize:20}}>Einschlafhilfe</Text>
+        <SettingButton/>
+        {/*Main Section*/}
+        <Text style={styles.text}>Hello From the Wecker side! </Text>
       </View>
     );
   }
@@ -19,6 +27,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   text: {
-    fontSize: 30,
+    fontSize: 31,
   },
 });
