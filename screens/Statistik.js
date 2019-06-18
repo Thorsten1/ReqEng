@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import Icon from "@builderx/icons";
 import MaterialCarousel7 from "../symbols/MaterialCarousel7";
+import MenuButton from '../components/MenuButton'
 import { Center } from "@builderx/utils";
 import { View, StyleSheet, StatusBar, Text } from "react-native";
 export default class Statistik extends Component {
    render() {
     return (
       <View style={styles.root}>
-        <Icon style={styles.icon} type="Ionicons" name="ios-menu" />
+		<MenuButton navigation={this.props.navigation} />
         <StatusBar style={styles.statusBar} />
         <Center horizontal>
           <MaterialCarousel7 style={styles.materialCarousel7} />
