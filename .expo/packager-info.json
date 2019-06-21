@@ -1,8 +1,18 @@
 {
+<<<<<<< HEAD
   "expoServerPort": 19000,
   "packagerPort": 19001,
   "packagerPid": 18604,
   "expoServerNgrokUrl": "https://q4-x8x.anonymous.reqeng.exp.direct",
   "packagerNgrokUrl": "https://packager.q4-x8x.anonymous.reqeng.exp.direct",
   "ngrokPid": 4504
+=======
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": "https://q4-x8x.anonymous.sleepguard.exp.direct",
+  "packagerNgrokUrl": "https://packager.q4-x8x.anonymous.sleepguard.exp.direct",
+  "ngrokPid": 5344,
+  "devToolsPort": 19002
+>>>>>>> statistik
 }
