@@ -8,6 +8,9 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@builderx/icons": "^0.1.10",
+    "@builderx/react-native-swiper": "^0.1.6",
+    "@builderx/utils": "^0.1.6",
     "expo": "^33.0.0",
     "react": "16.8.3",
     "react-dom": "^16.8.6",
