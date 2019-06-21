@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Icon from "@builderx/icons";
-import MaterialCarousel7 from "../symbols/MaterialCarousel7";
+import DifferentDays from "../components/DifferentDays";
 import MenuButton from '../components/MenuButton'
 import { Center } from "@builderx/utils";
 import { View, StyleSheet, StatusBar, Text } from "react-native";
@@ -11,9 +11,9 @@ export default class Statistik extends Component {
 		<MenuButton navigation={this.props.navigation} />
         <StatusBar style={styles.statusBar} />
         <Center horizontal>
-          <MaterialCarousel7 style={styles.materialCarousel7} />
+          <DifferentDays style={styles.differentdays} />
         </Center>
-        <Text style={styles.text2}>Statistik</Text>
+        <Text style={styles.text1}>Statistik</Text>
       </View>
     );
   }
@@ -32,14 +32,14 @@ const styles = StyleSheet.create({
     fontSize: 40
   },
   statusBar: {},
-  materialCarousel7: {
+  differentdays: {
     width: "100%",
     height: "80.56%",
     position: "absolute",
     top: "19.44%",
     shadowOpacity: 1
   },
-  text2: {
+  text1: {
     top: 47.71,
     left: 106.93,
     position: "absolute",

@@ -3,7 +3,7 @@ import Swiper from "@builderx/react-native-swiper";
 import { Center } from "@builderx/utils";
 import Svg, { Ellipse } from "react-native-svg";
 import { View, StyleSheet, Text } from "react-native";
-export default class MaterialCarousel7 extends Component {
+export default class DifferentGraphs2 extends Component {
    render() {
     return (
       <View style={[styles.root, this.props.style]}>
@@ -29,11 +29,11 @@ export default class MaterialCarousel7 extends Component {
             <Text style={styles.text3}>Page 3</Text>
           </View>
         </Swiper>
-        <Center horizontal>
-          <Text style={styles.text4}>86%</Text>
+		<Center horizontal>
+          <Text style={styles.text4}>21.06.2019</Text>
         </Center>
         <Text style={styles.text5}>
-          Gesamtdauer: 7:45 Stunden{"\n"}Schlafqualität: 84%
+          Gesamtdauer: 5:45 Stunden{"\n"}Schlafqualität: 80%
         </Text>
       </View>
     );
