@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Icon from "@builderx/icons";
 import { Center } from "@builderx/utils";
 import { View, StyleSheet, TouchableOpacity, Text } from "react-native";
-export default class Einschlafhilfe_Header extends Component {
+export default class EinschlafhilfeHeader extends Component {
    render() {
     return (
       <View style={[styles.root, this.props.style]}>

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Icon from "@builderx/icons";
 import { View, StyleSheet, TouchableOpacity } from "react-native";
-export default class Add_New_Sound_Button extends Component {
+export default class AddNewSoundButton extends Component {
    render() {
     return (
       <TouchableOpacity style={[styles.root, this.props.style]}>

@@ -57,4 +57,4 @@ const styles = StyleSheet.create({
 		color:'#FFF',
 		opacity: 0.7
 	}
-})
+});
