@@ -35,13 +35,9 @@ export default class Home extends React.Component {
         <StatusBar style={styles.statusBar} />
         <Text style={styles.textheader}>Sleep{"\n"}Guard</Text>
         <Text style={styles.textdatetime}>{this.state.time} Uhr{"\n"}{this.state.date}</Text>
-        <Icon style={styles.icon2} type="Ionicons" name="ios-mail" />
-        <Text style={styles.text4}>
+        <Icon style={styles.iconmail} type="Ionicons" name="ios-mail" />
+        <Text style={styles.textuser}>
           Willkommen Tim{"\n"}
-          {"\n"}
-          {"\n"}
-          {"\n"}
-          {"\n"}
           {"\n"}Bist du bereit für einen Powernap?
         </Text>
       </View>
@@ -55,48 +51,40 @@ const styles = StyleSheet.create({
     flex: 1,
     opacity: 1
   },
-  icon: {
-    top: 37.71,
-    left: 24.49,
-    position: "absolute",
-    color: "rgba(124,114,255,1)",
-    fontSize: 40
-  },
   textheader: {
-    top: 42,
+    top: 37.71,
     position: "absolute",
     color: "rgba(124,114,255,1)",
-    height: 80,
+    height: "20%",
     width: "100%",
-    fontSize: 24,
+    fontSize: 28,
     textAlign: "center"
   },
   statusBar: {},
   textdatetime: {
-    top: 120.76,
+    top: "20%",
     position: "absolute",
     color: "rgba(38,153,251,1)",
-    height: "7.57%",
+    height: "20%",
     width: "100%",
     left: "0%",
     textAlign: "center",
-    fontSize: 18
+    fontSize: 24
   },
-  icon2: {
+  iconmail: {
     top: 37.71,
-    left: 288.5,
+    left: "90%",
     position: "absolute",
     color: "rgba(124,114,255,1)",
     fontSize: 40
   },
-  text4: {
-    top: 208.83,
-    left: 0,
+  textuser: {
+    top: "30%",
     position: "absolute",
     color: "rgba(38,153,251,1)",
-    height: "24.596590995788574%",
+    height: "20%",
     width: "100%",
-    fontSize: 18,
+    fontSize: 24,
     textAlign: "center"
   }
 });
