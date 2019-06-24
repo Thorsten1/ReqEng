@@ -2,6 +2,7 @@ import React from 'react';
 import { Platform, Dimensions } from 'react-native';
 import {createDrawerNavigator, createAppContainer} from 'react-navigation';
 
+import Home from '../screens/Home';
 import Wecker from '../screens/Wecker';
 import Einschlafhilfe from '../screens/Einschlafhilfe';
 import PowerNap from '../screens/PowerNap';
@@ -22,6 +23,9 @@ const DrawerConfig = {
 }
 
 const DrawerNavigator = createDrawerNavigator({
+	Home: {
+		screen: Home,
+		},
 	Wecker: {
 		screen: Wecker,
 		},
