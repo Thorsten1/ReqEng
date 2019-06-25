@@ -7,8 +7,11 @@ export default class DifferentGraphs2 extends Component {
    render() {
 	const fill = 'rgb(134, 65, 244)'
     const datagraph1   = [ 1, 3, 1 ]
+	const time1   = [ 4, 5, 6 ]
 	const datagraph2   = [ 1, 3 ]
+	const time2   = [ 8, 9 ]
 	const datagraph3   = [ 1, 3, 3 ]
+	const time3   = [ 16, 17 ]
     return (
       <View style={[styles.root, this.props.style]}>
         <Swiper style={styles.carousel} index={0}>
@@ -24,7 +27,7 @@ export default class DifferentGraphs2 extends Component {
 			</BarChart>
 			<XAxis
                style={styles.xaxis}
-               data={ datagraph1 }
+               data={ time1 }
                formatLabel={ (value, index) => index }
                contentInset={{ left: 10, right: 10 }}
 			   svg={{ fontSize: 14, fill: "rgba(38,153,251,1)" }}
@@ -42,7 +45,7 @@ export default class DifferentGraphs2 extends Component {
 			</BarChart>
 			<XAxis
                style={styles.xaxis}
-               data={ datagraph2 }
+               data={ time2 }
                formatLabel={ (value, index) => index }
                contentInset={{ left: 10, right: 10 }}
 			   svg={{ fontSize: 14, fill: "rgba(38,153,251,1)" }}
@@ -60,7 +63,7 @@ export default class DifferentGraphs2 extends Component {
 			</BarChart>
 			<XAxis
                style={styles.xaxis}
-               data={ datagraph3 }
+               data={ time3 }
                formatLabel={ (value, index) => index }
                contentInset={{ left: 10, right: 10 }}
 			   svg={{ fontSize: 14, fill: "rgba(38,153,251,1)" }}

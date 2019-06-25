@@ -1,9 +1,9 @@
 {
-  "expoServerPort": 19000,
-  "expoServerNgrokUrl": "https://q4-x8x.anonymous.reqeng.exp.direct",
-  "packagerNgrokUrl": "https://packager.q4-x8x.anonymous.reqeng.exp.direct",
-  "ngrokPid": 5100,
+  "expoServerPort": null,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null,
   "devToolsPort": 19002,
-  "packagerPort": 19001,
-  "packagerPid": 11976
+  "packagerPort": null,
+  "packagerPid": null
 }

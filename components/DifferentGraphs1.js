@@ -6,14 +6,17 @@ import { View, StyleSheet, Text } from "react-native";
 export default class DifferentGraphs1 extends Component {
    render() {
 	const fill = 'rgb(134, 65, 244)'
-    const datagraph1   = [ 1, 3, 3 ]
-	const datagraph2   = [ 1, 1, 3, 3, 1 ]
+    const datagraph1   = [ 1, 1, 3, 3, 1 ]
+	const time1   = [ 0, 1, 2, 3, 4 ]
+	const datagraph2   = [ 1, 3, 3 ]
+	const time2   = [ 14, 15, 16 ]
 	const datagraph3   = [ 1, 3, 1 ]
+	const time3   = [ 21, 22, 23 ]
     return (
       <View style={[styles.root, this.props.style]}>
         <Swiper style={styles.carousel} index={0}>
           <View style={styles.rect}>
-			<Text style={styles.textgraph}>Dauer: 3 Stunden</Text>
+			<Text style={styles.textgraph}>Dauer: 5 Stunden</Text>
 			<BarChart
 			   style={styles.graph}
 			   data={ datagraph1 }
@@ -24,14 +27,14 @@ export default class DifferentGraphs1 extends Component {
 			</BarChart>
 			<XAxis
                style={styles.xaxis}
-               data={ datagraph1 }
+               data={ time1 }
                formatLabel={ (value, index) => index }
                contentInset={{ left: 10, right: 10 }}
 			   svg={{ fontSize: 14, fill: "rgba(38,153,251,1)" }}
             />
           </View>
           <View style={styles.rect}>
-			<Text style={styles.textgraph}>Dauer: 5 Stunden</Text>
+			<Text style={styles.textgraph}>Dauer: 3 Stunden</Text>
 			<BarChart
 			   style={styles.graph}
 			   data={ datagraph2 }
@@ -42,7 +45,7 @@ export default class DifferentGraphs1 extends Component {
 			</BarChart>
 			<XAxis
                style={styles.xaxis}
-               data={ datagraph2 }
+               data={ time2 }
                formatLabel={ (value, index) => index }
                contentInset={{ left: 10, right: 10 }}
 			   svg={{ fontSize: 14, fill: "rgba(38,153,251,1)" }}
@@ -60,7 +63,7 @@ export default class DifferentGraphs1 extends Component {
 			</BarChart>
 			<XAxis
                style={styles.xaxis}
-               data={ datagraph3 }
+               data={ time3 }
                formatLabel={ (value, index) => index }
                contentInset={{ left: 10, right: 10 }}
 			   svg={{ fontSize: 14, fill: "rgba(38,153,251,1)" }}
