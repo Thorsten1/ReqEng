@@ -12,7 +12,7 @@ export default class CloseButton extends React.Component{
 			style={styles.menuIcon}
 			onPress={() => this.props.navigation.toggleDrawer()}
 		/>
-		)	
+		)
 	}
 }
 
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
 		zIndex:9,
 		position:'absolute',
 		top:40,
-		right:20,	
+		right:20,
 	}
 
 })
