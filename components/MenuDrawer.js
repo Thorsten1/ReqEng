@@ -28,6 +28,7 @@ export default class MenuDrawer extends React.Component{
 					SleepGuard
 				</Text>
 				<View style={styles.link}>
+					{this.navLink('Startscreen','Startseite')}
 					{this.navLink('Wecker' ,'Wecker')}
 					{this.navLink('Einschlafhilfe' ,'Einschlafhilfe')}
 					{this.navLink('PowerNap' ,'Power Nap')}
@@ -44,7 +45,7 @@ export default class MenuDrawer extends React.Component{
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: '#261568',
+		backgroundColor: "rgba(58,53,111,1)",
 	},
 	link :{
 		flex: 1,
