@@ -28,6 +28,7 @@ export default class MenuDrawer extends React.Component{
 					SleepGuard
 				</Text>
 				<View style={styles.link}>
+					{this.navLink('Startscreen','Startseite')}
 					{this.navLink('Wecker' ,'Wecker')}
 					{this.navLink('Einschlafhilfe' ,'Einschlafhilfe')}
 					{this.navLink('PowerNap' ,'Power Nap')}
