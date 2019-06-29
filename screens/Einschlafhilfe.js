@@ -5,16 +5,16 @@ import VolumeWind from "../components/VolumeWind";
 import VolumeFire from "../components/VolumeFire";
 import VolumeRain from "../components/VolumeRain";
 import VolumeMusic from "../components/VolumeMusic";
-import EinschlafhilfeHeader from "../components/EinschlafhilfeHeader";
 import AddSound from "../components/AddSound";
-import EinschlafhilfeSoundButtonRain from "../components/EinschlafhilfeSoundButtonRain";
-import EinschlafhilfeSoundButtonWater from "../components/EinschlafhilfeSoundButtonWater";
-import EinschlafhilfeSoundButtonFire from "../components/EinschlafhilfeSoundButtonFire";
-import EinschlafhilfeSoundButtonWind from "../components/EinschlafhilfeSoundButtonWind";
-import EinschlafhilfeSoundButtonMusic from "../components/EinschlafhilfeSoundButtonMusic";
-import { View, StyleSheet, StatusBar } from "react-native";
-var SoundPlayer = require('react-native-sound');
-var song = null;
+import SoundButtonRain from "../components/EinschlafhilfeSoundButtonRain";
+import SoundButtonWater from "../components/EinschlafhilfeSoundButtonWater";
+import SoundButtonFire from "../components/EinschlafhilfeSoundButtonFire";
+import SoundButtonWind from "../components/EinschlafhilfeSoundButtonWind";
+import SoundButtonMusic from "../components/EinschlafhilfeSoundButtonMusic";
+import { StyleSheet, Text, View, TextInput } from "react-native";
+// Import for Header
+import MenuButton from '../components/MenuButton'
+import MenuNotifications from '../components/MenuNotifications'
 
 export default class Einschlafhilfe extends Component {
   constructor(props) {
@@ -27,32 +27,34 @@ export default class Einschlafhilfe extends Component {
   render() {
     return (
       <View style={styles.root}>
-        <VolumeWater style={styles.materialVolumeWater} />
-        <VolumeWind style={styles.materialVolumeWind} />
-        <VolumeFire style={styles.materialVolumeFire} />
-        <VolumeRain style={styles.materialVolumeRain} />
-        <VolumeMusic style={styles.materialVolumeMusic} />
-        <View style={styles.group} />
-        <EinschlafhilfeHeader style={styles.materialHeader} />
-        <AddSound
-          style={styles.materialButtonAddSound}
-        />
-        <StatusBar style={styles.statusBar} />
-        <EinschlafhilfeSoundButtonRain
-          style={styles.materialButtonRain}
-        />
-        <EinschlafhilfeSoundButtonWater
-          style={styles.materialButtonWater}
-        />
-        <EinschlafhilfeSoundButtonFire
-          style={styles.materialButtonFire}
-        />
-        <EinschlafhilfeSoundButtonWind
-          style={styles.materialButtonWind}
-        />
-        <EinschlafhilfeSoundButtonMusic
-          style={styles.materialButtonMusic}
-        />
+        {/*Header Section*/}
+        <MenuButton navigation={this.props.navigation} />
+        <Text style={{position:'absolute', top:40, textAlign:'right', fontSize:20}}> Einschlafhilfe </Text>
+        <MenuNotifications/>
+        {/*Main Section*/}
+        <View style={{flexDirection: "row", alignContent:"space-between"}}>
+            <SoundButtonWater style={styles.materialButtonWater} />
+            <SoundButtonWind style={styles.materialButtonWind} />
+        </View>
+        <View style={{flexDirection: "row", alignContent:"space-between"}}>
+            <VolumeWater style={styles.materialVolumeWater} />
+            <VolumeWind style={styles.materialVolumeWind} />
+        </View>
+        <View style={{flexDirection: "row", alignContent:"space-between"}}>
+            <SoundButtonFire style={styles.materialButtonFire} />
+            <SoundButtonRain style={styles.materialButtonRain} />
+       </View>
+        <View style={{flexDirection: "row", alignContent:"space-between"}}>
+            <VolumeFire style={styles.materialVolumeFire} />
+            <VolumeRain style={styles.materialVolumeRain} />
+        </View>
+        <View style={{flexDirection: "row", alignContent:"space-between"}}>
+            <SoundButtonMusic style={styles.materialButtonMusic} />
+            <AddSound style={styles.materialButtonAddSound} />
+        </View>
+        <View style={{flexDirection: "row", alignContent:"space-between"}}>
+            <VolumeMusic style={styles.materialVolumeMusic} />
+        </View>
       </View>
     );
   }
@@ -60,102 +62,96 @@ export default class Einschlafhilfe extends Component {
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-    backgroundColor: "rgba(64,57,143,1)"
+    backgroundColor: '#261568',
+    alignItems: 'center',
+  },
+  text: {
+    fontSize: 31,
   },
   materialVolumeWater: {
     width: 150,
     height: 30,
     position: "absolute",
-    left: 9.97,
-    top: 189.97
+    right: 10,
+    top: 190
   },
   materialVolumeWind: {
     width: 150,
-    height: 30.18,
+    height: 30,
     position: "absolute",
-    left: 189.6,
-    top: 189.79
+    left: 10,
+    top: 190
   },
   materialVolumeFire: {
     width: 150,
     height: 30,
     position: "absolute",
-    left: 9.55,
-    top: 326.14
+    right: 10,
+    top: 315
   },
   materialVolumeRain: {
     width: 150,
     height: 30,
     position: "absolute",
-    left: 199.51,
-    top: 326.14
+    left: 10,
+    top: 315
   },
   materialVolumeMusic: {
     width: 150,
     height: 30,
     position: "absolute",
-    left: 9.55,
-    top: 462.67
+    right: 10,
+    top: 450
   },
-  group: {
+  /*group: {
     position: "absolute",
     top: 0,
     left: 0,
     height: 0,
     width: 360
-  },
-  materialHeader: {
-    width: 360,
-    height: 56,
-    position: "absolute",
-    top: 24,
-    flexDirection: "column",
-    justifyContent: "space-between",
-    backgroundColor: "rgba(58,53,111,1)",
-    overflow: "visible",
-    left: "0%"
-  },
+  },*/
   materialButtonAddSound: {
-    width: 89.81,
-    height: 89.58,
+    width: 90,
+    height: 90,
     position: "absolute",
-    left: 229.7,
-    top: 372.23
+    left: 40,
+    top: 360
   },
-  statusBar: {},
+  //statusBar: {},
   materialButtonRain: {
     width: 90,
     height: 90,
     position: "absolute",
-    left: 229.6,
-    top: 235.26
+    left: 40,
+    top: 225
   },
   materialButtonWater: {
-    width: 90.07,
-    height: 89.53,
-    position: "absolute",
-    left: 40.24,
-    top: 99.56
-  },
-  materialButtonFire: {
-    width: 89.6,
-    height: 89.64,
-    position: "absolute",
-    left: 40.24,
-    top: 235.43
-  },
-  materialVolumeWind: {
-    width: 90,
-    height: 89.53,
-    position: "absolute",
-    left: 229.6,
-    top: 99.56
-  },
-  materialVolumeMusic: {
     width: 90,
     height: 90,
     position: "absolute",
-    left: 39.55,
-    top: 371.61
+    right: 40,
+    top: 100
+  },
+  materialButtonFire: {
+    width: 90,
+    height: 90,
+    position: "absolute",
+    right: 40,
+    top: 225
+  },
+  materialButtonWind: {
+    width: 90,
+    height: 90,
+    position: "absolute",
+    left: 40,
+    top: 100
+  },
+
+  materialButtonMusic: {
+    width: 90,
+    height: 90,
+    position: "absolute",
+    right: 40,
+    top: 360
   }
 });

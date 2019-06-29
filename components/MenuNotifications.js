@@ -10,7 +10,7 @@ export default class MenuNotifications extends React.Component{
 			color="#FFF"
 			size={32}
 			style={styles.menuIcon}
-			onPress={() => this.props.navigation.toggleDrawer()}
+			//onPress={() => this.props.navigation.toggleDrawer()}
 		/>
 		)	
 	}

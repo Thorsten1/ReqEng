@@ -1,35 +1,64 @@
 import React, { Component } from "react";
 import Icon from "@builderx/icons";
 import { StyleSheet, TouchableOpacity, ToastAndroid } from "react-native";
+import SoundPlayer from "react-native-sound-player";
+var song = null;
+try {
+  // play the file tone.mp3
+  SoundPlayer.playSoundFile('rain', 'mp3')
+  // or play from url
+  // SoundPlayer.playUrl('https://example.com/music.mp3')
+} catch (e) {
+  console.log(`cannot play the sound file`, e)
+}
+export default class SoundButtonRain extends Component {
+  constructor(props) {
+    super(props)
 
-export default class SoundButtonWind extends Component {
-  // constructor(props) {
-  //   super(props)
+    this.state = {
+      play: false,
+    };
+  }
 
-  //   this.state = {
-  //     play: false,
-  //   };
+  // componentWillMount() {
+  //   song = new SoundPlayer('rain.mp3', SoundPlayer.MAIN_BUNDLE, (error) => {
+  //     if (error) ToastAndroid.show('Error when init SoundPlayer', ToastAndroid.SHORT);
+  //   })
   // }
+  
 
-  componentWillMount() {
-    song = new SoundPlayer('wind.mp3', SoundPlayer.MAIN_BUNDLE, (error) => {
-      if (error) ToastAndroid.show('Error when init SoundPlayer', ToastAndroid.SHORT);
+  componentDidMount() {
+    SoundPlayer.onFinishedPlaying((success: boolean) => { // success is true when the sound is played
+      console.log('finished playing', success)
     })
+    SoundPlayer.onFinishedLoading(async (success: boolean) => {
+      console.log('finished loading', success)
+      // ready to `play()`, `getInfo()`, etc
+      console.log(await SoundPlayer.getInfo())
+    })
+  }
+
+  playSong() {
+    try {
+        SoundPlayer.playSoundFile('rain', 'mp3')
+    } catch (e) {
+        alert('Cannot play the file')
+        console.log('cannot play the song file', e)
+    }
   }
 
   onPressButton() {
     if (song != null) {
       if (!this.state.play) {
-        song.play((success) => {
-          if (!success) ToastAndroid.show('Error when play SoundPlayer', ToastAndroid.SHORT);
-        })
+        song.playSong()
       }
       else {
-        song.stop();
+        song.stop()
       }
-      this.setState({ play: !this.state.play });
     }
+    this.setState({ play: !this.state.play });
   }
+
   render() {
     if (!this.state.play) {
       return (
@@ -58,7 +87,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   caption: {
-    color: "#3F51B5",
-    fontSize: 24
+    color: "rgba(167,164,203,1)",
+    fontSize: 100
   }
 });
