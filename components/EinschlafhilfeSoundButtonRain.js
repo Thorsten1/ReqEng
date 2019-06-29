@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import Icon from "@builderx/icons";
 import { StyleSheet, TouchableOpacity, ToastAndroid, Text, View } from "react-native";
-import SoundPlayer from "react-native-sound-player";
+import { Audio, Video } from 'expo-av';
+
+Audio.setIsEnabledAsync(true);
+const soundRain = new Audio.Sound();
 try {
-  // play the file tone.mp3
-  SoundPlayer.playSoundFile('rain', 'mp3')
-  // or play from url
-  // SoundPlayer.playUrl('https://example.com/music.mp3')
+    soundRain.loadAsync(require('../assets/sounds/rain.mp3'));
 } catch (e) {
-  console.log(`cannot play the sound file`, e)
-}
+    console.log('cannot load file', e);
+}*/
 export default class SoundButtonRain extends Component {
   constructor(props) {
     super(props)
@@ -19,43 +19,16 @@ export default class SoundButtonRain extends Component {
     };
   }
 
-  componentDidMount() {
-    SoundPlayer.onFinishedPlaying((success: boolean) => { // success is true when the sound is played
-      console.log('finished playing', success)
-    })
-    SoundPlayer.onFinishedLoading(async (success: boolean) => {
-      console.log('finished loading', success)
-      // ready to `play()`, `getInfo()`, etc
-      console.log(await SoundPlayer.getInfo())
-    })
-  }
-
-  playSong() {
-    try {
-        SoundPlayer.playSoundFile('rain', 'mp3')
-    } catch (e) {
-        alert('Cannot play the file')
-        console.log('cannot play the song file', e)
-    }
-  }
-
-  stopSong() {
-    try {
-        SoundPlayer.stop()
-    } catch (e) {
-        alert('Cannot stop the song')
-        console.log('cannot stop the song file', e)
-    }
-  }
-
   onPressButton() {
-    if (this != null) {
-      if (!this.state.play) {
-        this.playSong()
-      }
-      else {
-        this.stopSong()
-      }
+    if(!this.state.play) {
+        try {
+            soundRain.playAsync();
+            soundRain.setIsLoopingAsync(true)
+        } catch (e) {
+            alert('Cannot play the song');
+        }
+    } else {
+        soundRain.stopAsync();
     }
     this.setState({ play: !this.state.play });
   }
