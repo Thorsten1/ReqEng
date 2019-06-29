@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Icon from "@builderx/icons";
 import { StyleSheet, TouchableOpacity, ToastAndroid } from "react-native";
 import SoundPlayer from "react-native-sound-player";
-// var song = null;
 try {
   // play the file tone.mp3
   SoundPlayer.playSoundFile('rain', 'mp3')
@@ -20,13 +19,6 @@ export default class SoundButtonRain extends Component {
     };
   }
 
-  // componentWillMount() {
-  //   song = new SoundPlayer('rain.mp3', SoundPlayer.MAIN_BUNDLE, (error) => {
-  //     if (error) ToastAndroid.show('Error when init SoundPlayer', ToastAndroid.SHORT);
-  //   })
-  // }
-  
-
   componentDidMount() {
     SoundPlayer.onFinishedPlaying((success: boolean) => { // success is true when the sound is played
       console.log('finished playing', success)
@@ -37,19 +29,6 @@ export default class SoundButtonRain extends Component {
       console.log(await SoundPlayer.getInfo())
     })
   }
-  /*onPressButton() {
-    if (song != null) {
-      if (!this.state.play) {
-        song.play((success) => {
-          if (!success) ToastAndroid.show('Error when play SoundPlayer', ToastAndroid.SHORT);
-        })
-      }
-      else {
-        song.stop();
-      }
-      this.setState({ play: !this.state.play });
-    }
-  }*/
 
   playSong() {
     try {
@@ -60,8 +39,13 @@ export default class SoundButtonRain extends Component {
     }
   }
 
-  stop() {
-
+  stopSong() {
+    try {
+        SoundPlayer.stop()
+    } catch (e) {
+        alert('Cannot stop the song')
+        console.log('cannot stop the song file', e)
+    }
   }
 
   onPressButton() {
@@ -70,12 +54,11 @@ export default class SoundButtonRain extends Component {
         this.playSong()
       }
       else {
-        this.stop()
+        this.stopSong()
       }
     }
     this.setState({ play: !this.state.play });
   }
-
   render() {
     if (!this.state.play) {
       return (
