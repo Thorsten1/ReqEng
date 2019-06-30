@@ -2,7 +2,7 @@ import React, { Component } from "react";
 //imports for header Buttons
 import MenuButton from '../components/MenuButton';
 import MenuNotifications from '../components/MenuNotifications';
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, Image } from "react-native";
 export default class Startscreen extends Component {
    render() {
     return (
@@ -13,6 +13,10 @@ export default class Startscreen extends Component {
           <MenuNotifications style={{flexDirection:'row'}}/>
           <View style={{flex:2}}>
             {/*Spacer for Headerbar*/}
+          </View>
+          <View style={{flex:3, marginBottom:35}}>
+          <Image style={{width:200, height:200}}          
+          source={require('../assets/logo.png')}/>
           </View>
         <Text style={styles.textHeader}>
          Willkommen Thorsten! {"\n"}
@@ -32,14 +36,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   textHeader: {
-    flex:3,
+    flex:4,
     fontSize: 30,
     fontFamily: "roboto-regular",
     color: "black",
+    marginTop: 20,
     textAlign: "center"
   },
   textBox: {
-    flex:4,
+    flex:5,
     fontSize: 20,
     fontFamily: "roboto-regular",
     color: "black",
