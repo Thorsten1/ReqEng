@@ -14,7 +14,7 @@ export default class Einschlafhilfe extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#261568',
+    backgroundColor: "rgba(58,53,111,1)",
     alignItems: 'center',
     justifyContent: 'center',
   },

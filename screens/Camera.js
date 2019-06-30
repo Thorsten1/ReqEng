@@ -79,27 +79,8 @@ export default class Cam extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#261568',
+    backgroundColor: "rgba(58,53,111,1)",
     justifyContent: 'center',
-  },
-  paragraph: {
-    margin: 24,
-    fontSize: 25,
-    fontWeight: 'bold',
-    textAlign: 'center',
-	color: "rgba(254,251,251,1)"
-  },
-  text2: {
-    top: 365.46,
-    left: 81.28,
-    position: "absolute",
-    color: "rgba(254,251,251,1)"
-  },
-  text3: {
-    top: 365.46,
-    left: 271.2,
-    position: "absolute",
-    color: "rgba(254,220,220,1)"
   },
     materialButtonViolet: {
     width: 295.9,
@@ -107,10 +88,5 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 450.31,
     left: "9.59%"
-  },
-  materialSlider: {
-    width: 150,
-    height: 94.2,
-    position: "absolute"
   },
 });
