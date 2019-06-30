@@ -9,7 +9,7 @@ try {
     soundRain.loadAsync(require('../assets/sounds/rain.mp3'));
 } catch (e) {
     console.log('cannot load file', e);
-}*/
+}
 export default class SoundButtonRain extends Component {
   constructor(props) {
     super(props)
