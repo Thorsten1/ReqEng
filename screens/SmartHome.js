@@ -7,7 +7,7 @@ export default class SmartHome extends React.Component {
     return (
       <View style={styles.container}>
         <MenuButton navigation={this.props.navigation} />
-        <Text style={styles.text}>Hello From the SmartHome side! </Text>
+        <Text style={styles.text}>The SmartHome feature is coming soon! </Text>
       </View>
     );
   }
