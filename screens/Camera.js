@@ -1,6 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, Slider } from 'react-native';
-
+import { Text, View, TouchableOpacity, Button } from 'react-native';
+import * as Permissions from 'expo-permissions';
+import { Camera } from 'expo-camera';
 //imports for header Buttons
 import MenuButton from '../components/MenuButton'
 import MenuNotifications from '../components/MenuNotifications'
@@ -9,40 +10,35 @@ import CountDown from 'react-native-countdown-component';
 
 
 export default class PowerNap extends React.Component {
-  state = {value: 5, visible: false}
+  state = {hasCameraPermission: null,
+	   type: Camera.Constants.Type.back, 
+	   visible: false}
+
+  async componentDidMount() {
+    const { status } = await Permissions.askAsync(Permissions.CAMERA);
+    this.setState({ hasCameraPermission: status === 'granted' });
+  }
 
   buttonClickListener = () =>{
     this.setState({ visible: true });
   }
 
   render(){
-    return (
-      <View style={styles.container}>
-
-		{/*Header Section*/}
-        <MenuButton navigation={this.props.navigation} />
+    const { hasCameraPermission } = this.state;
+    if (hasCameraPermission === null) {
+      return <View />;
+    } else if (hasCameraPermission === false) {
+      return <Text>No access to camera</Text>;
+    } else {
+      return (
         
-        <MenuNotifications/>
-		{/*Content*/}
-        <Text style={styles.paragraph}>  {this.state.value} Minuten</Text>
-        
-		<Text style={styles.text2}>5</Text>
-        <Text style={styles.text3}>20</Text>
-        <Slider style={styles.materialSlider}
-			minimumValue= {5}
-			maximumValue = {20}
-			step = {1}
-			value={this.state.value}
-			onValueChange={value => this.setState({ value })}
-			thumbTintColor="#3F51B5"
-			minimumTrackTintColor="#3F51B5"
-			maximumTrackTintColor="#9E9E9E"
-        />
-       
 
-        <Button onPress = {this.buttonClickListener} style={styles.materialButtonViolet}
+		<View style={{ flex: 1, justifyContent: 'center' }}>
+		<Button onPress = {this.buttonClickListener} style={{ materialButtonViolet }}
           title="Start"
         />
+		
+		
 		
 		<Dialog
 			visible={this.state.visible}
@@ -51,21 +47,35 @@ export default class PowerNap extends React.Component {
 				}}
 			>
 			<DialogContent>
-				<Text style={{fontSize:40, margin: 40,}}> PowerNap </Text>
-			
-				<CountDown
-					until={60 * this.state.value}
-					size={50}
-					onFinish={() => alert('Finished')}
-					digitStyle={{backgroundColor: '#000'}}
-					digitTxtStyle={{color: '#fff'}}
-					timeToShow={['M', 'S']}
-					timeLabels={{m: 'Min', s: 'Sek'}}
-				/>
+			<Text style={{color: 'white'}}>Take a picture of the object you have choosen</Text>
+			<Camera style={{ flex: 1 }} type={this.state.type}>
+				<View
+				style={{
+                flex: 1,
+                backgroundColor: 'transparent',
+                flexDirection: 'row',
+				}}>
+				
+				</View>
+			</Camera>
+			<TouchableOpacity
+					style={{
+					alignItems: 'center',
+					}}
+					onPress={() => {
+						
+							this.setState({ visible: false });
+						
+					}
+					}>
+					<Text style={{ fontSize: 18, marginTop: 10, color: 'black' }}> Snap </Text>
+				</TouchableOpacity>
 			</DialogContent>
 		</Dialog>
-      </View>
-    );
+          
+        </View>
+      );
+    }
   }
 }
 
