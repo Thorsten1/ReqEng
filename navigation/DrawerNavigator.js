@@ -23,9 +23,6 @@ const DrawerConfig = {
 }
 
 const DrawerNavigator = createDrawerNavigator({
-	Home: {
-		screen: Home,
-		},
 	Wecker: {
 		screen: Wecker,
 		},

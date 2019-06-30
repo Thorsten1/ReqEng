@@ -2,8 +2,8 @@
   "expoServerPort": 19000,
   "expoServerNgrokUrl": "https://q4-x8x.anonymous.sleepguard.exp.direct",
   "packagerNgrokUrl": "https://packager.q4-x8x.anonymous.sleepguard.exp.direct",
-  "ngrokPid": 10652,
+  "ngrokPid": 3516,
   "devToolsPort": 19002,
   "packagerPort": 19001,
-  "packagerPid": 15812
+  "packagerPid": 15536
 }
