@@ -36,6 +36,7 @@ export default class MenuDrawer extends React.Component{
 					{this.navLink('Kalender' ,'Kalender')}
 					{this.navLink('SmartHome' ,'Smarthome')}
 					{this.navLink('Community' ,'Community')}
+					{this.navLink('Cam','Camera Demo')}
 				</View>
 			</View>
 		)

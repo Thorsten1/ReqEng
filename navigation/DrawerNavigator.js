@@ -10,6 +10,7 @@ import Statistik from '../screens/Statistik';
 import Kalender from '../screens/Kalender';
 import SmartHome from '../screens/SmartHome';
 import Community from '../screens/Community';
+import Cam from '../screens/Camera';
 import MenuDrawer from '../components/MenuDrawer';
 
 const WIDTH = Dimensions.get('window').width;
@@ -45,6 +46,9 @@ const DrawerNavigator = createDrawerNavigator({
 		},
 	Community: {
 		screen: Community,
+		},
+	Cam: {
+		screen: Cam,
 		},
 	},
 	DrawerConfig
