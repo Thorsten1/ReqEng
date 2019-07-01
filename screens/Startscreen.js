@@ -2,7 +2,9 @@ import React, { Component } from "react";
 //imports for header Buttons
 import MenuButton from '../components/MenuButton';
 import MenuNotifications from '../components/MenuNotifications';
+
 import { View, StyleSheet, Text, Image } from "react-native";
+
 export default class Startscreen extends Component {
    render() {
     return (
@@ -36,6 +38,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   textHeader: {
+
     flex:4,
     fontSize: 30,
     fontFamily: "roboto-regular",
