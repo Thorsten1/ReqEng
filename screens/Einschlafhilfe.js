@@ -29,7 +29,7 @@ export default class Einschlafhilfe extends Component {
       <View style={styles.root}>
         {/*Header Section*/}
         <MenuButton navigation={this.props.navigation} />
-        <Text style={{position:'absolute', top:40, textAlign:'right', fontSize:20}}> Einschlafhilfe </Text>
+        <Text style={{color: 'white', position:'absolute', top:40, textAlign:'right', fontSize:20}}> Einschlafhilfe </Text>
         <MenuNotifications/>
         {/*Main Section*/}
         <View style={{flexDirection: "row", alignContent:"space-between"}}>

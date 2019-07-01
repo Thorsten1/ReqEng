@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Icon from "@builderx/icons";
-import { StyleSheet, TouchableOpacity, ToastAndroid } from "react-native";
+import { StyleSheet, TouchableOpacity, ToastAndroid, View, Slider } from "react-native";
 import { Audio, Video } from 'expo-av';
 
 Audio.setIsEnabledAsync(true);
@@ -44,12 +44,13 @@ export default class SoundButtonRain extends Component {
     else {
       return (
         <TouchableOpacity style={[styles.root, this.props.style]} onPress={this.onPressButton.bind(this)}>
-          <Icon style={styles.caption} name="ios-pause" type="Ionicons" />
+            <Icon style={styles.caption} name="ios-pause" type="Ionicons" />
         </TouchableOpacity>
       );
     }
   }
 }
+
 const styles = StyleSheet.create({
   root: {
     backgroundColor: "transparent",
@@ -62,5 +63,5 @@ const styles = StyleSheet.create({
   caption: {
     color: "rgba(167,164,203,1)",
     fontSize: 100
-  }
+  },
 });

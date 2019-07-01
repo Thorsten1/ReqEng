@@ -8,6 +8,7 @@ export default class VolumeWind extends Component {
           style={styles.slider}
           minimumValue={0}
           maximumValue={100}
+          value={50}
           thumbTintColor="#3F51B5"
           minimumTrackTintColor="#3F51B5"
           maximumTrackTintColor="#9E9E9E"
