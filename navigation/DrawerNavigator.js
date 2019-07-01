@@ -2,11 +2,8 @@ import React from 'react';
 import { Platform, Dimensions } from 'react-native';
 import {createDrawerNavigator, createAppContainer} from 'react-navigation';
 
-<<<<<<< HEAD
-import Home from '../screens/Home';
-=======
+
 import Startscreen from '../screens/Startscreen';
->>>>>>> master
 import Wecker from '../screens/Wecker';
 import Einschlafhilfe from '../screens/Einschlafhilfe';
 import PowerNap from '../screens/PowerNap';

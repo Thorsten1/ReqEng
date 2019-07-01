@@ -49,13 +49,7 @@ const styles = StyleSheet.create({
   root: {
     backgroundColor: "rgba(58,53,111,1)",
     flex: 1,
-<<<<<<< HEAD
     opacity: 1
-=======
-    backgroundColor: "rgba(58,53,111,1)",
-    alignItems: 'center',
-    justifyContent: 'center',
->>>>>>> master
   },
   textheader: {
     top: 37.71,
