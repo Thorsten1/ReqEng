@@ -1,11 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, Slider } from 'react-native';
+import { StyleSheet, Text, View, Button, Slider, Vibration } from 'react-native';
 //imports for header Buttons
 import MenuButton from '../components/MenuButton'
 import MenuNotifications from '../components/MenuNotifications'
 import Dialog, { DialogContent } from 'react-native-popup-dialog';
 import CountDown from 'react-native-countdown-component';
 
+const PATTERN = [ 1000, 1000, 1000, 1000] ;
 
 export default class PowerNap extends React.Component {
   state = {value: 5, visible: false}
@@ -41,6 +42,7 @@ export default class PowerNap extends React.Component {
 			visible={this.state.visible}
 				onTouchOutside={() => {
 					this.setState({ visible: false });
+					Vibration.cancel();
 				}}
 			>
 			<DialogContent>
@@ -49,7 +51,7 @@ export default class PowerNap extends React.Component {
 				<CountDown
 					until={60 * this.state.value}
 					size={50}
-					onFinish={() => alert('Finished')}
+					onFinish={() => Vibration.vibrate(PATTERN,true)}
 					digitStyle={{backgroundColor: '#000'}}
 					digitTxtStyle={{color: '#fff'}}
 					timeToShow={['M', 'S']}
