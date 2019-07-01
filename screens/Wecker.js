@@ -326,7 +326,7 @@ const styles = StyleSheet.create({
     top:80,
     width:350,
     marginBottom:150,
-    backgroundColor:'#261568'
+    backgroundColor: "rgba(58,53,111,1)",
   },
 
   clock:{
