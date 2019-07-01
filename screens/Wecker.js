@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import { StyleSheet, Text, View, TextInput, ScrollView, TouchableOpacity,Switch, Slider } from 'react-native';
+import { StyleSheet, Text, View, TextInput, ScrollView, TouchableOpacity,Switch, Slider, Dimensions } from 'react-native';
 import Modal from "react-native-modal";
 //imports for header Buttons
 import MenuButton from '../components/MenuButton'
@@ -11,6 +11,8 @@ import { AppLoading } from 'expo';
 import * as Font from 'expo-font'
 import AlarmSave from '../components/AlarmSave';
 import TimePicker from "react-native-24h-timepicker"
+const WIDTH = Dimensions.get('window').width;
+const HEIGHT = Dimensions.get('window').height;
 
 export default class Wecker extends React.Component {
 
@@ -51,7 +53,7 @@ export default class Wecker extends React.Component {
 
   async componentDidMount() {
     await Font.loadAsync({
-      'roboto-regular': require('/home/thomas/devapp_ws/ReqEng/assets/fonts/roboto-regular.ttf'),
+      'roboto-regular': require('../assets/fonts/roboto-regular.ttf'),
     });
 
     this.setState({ fontLoaded: true });
@@ -108,7 +110,7 @@ export default class Wecker extends React.Component {
                 <Text style={{fontSize:26,textAlign:"center", color:"black"}}>{this.state.time ? this.state.time : "7:00"}</Text>
               </TouchableOpacity>
               <TimePicker textCancel ={"abbrechen"} textConfirm ={"fertig"}ref={ref => {this.TimePicker = ref;}} onCancel={() => this.onCancel()} onConfirm={(hour, minute) => {this.onConfirm(hour, minute); this.setState({ alarmTime:`${hour}:${minute}`})}} value={this.state.alarmTime}></TimePicker>
-              <TextInput style={{height: 40, width: 185 ,marginLeft: 40,marginTop: 45, paddingLeft: 6}} underlineColorAndroid="#8E1290" onChangeText={(alarmName) => this.setState({alarmName})} value={this.state.alarmName}/>
+              <TextInput style={{height: 40, width: 170 ,marginLeft: 40,marginTop: 45,marginRight:15, paddingLeft: 6, backgroundColor:'#ededed'}} underlineColorAndroid="#8E1290" onChangeText={(alarmName) => this.setState({alarmName})} value={this.state.alarmName}/>
               <TouchableOpacity style={[styles.ExitButton2, this.props.style]} onPress={this.toggleModal}>
                 <Icon style={styles.iconwindowclose} name="window-close" type="MaterialCommunityIcons" />
               </TouchableOpacity>
@@ -117,14 +119,14 @@ export default class Wecker extends React.Component {
               <Switch style={styles.switch1to2} thumbColor= "#8E1290" onValueChange={value => this.setState({smarteswecken:value})} value={this.state.smarteswecken}></Switch>
               <Text style={{textAlign:"center",marginTop:24,fontWeight:"bold",fontSize:12,marginLeft:2}}>Smartes Wecken</Text>
               <TouchableOpacity style={styles.PowernapButton}>
-                <Text style={{fontSize:9,color:"white",bottom:16,left:12}}>30 Minuten</Text>
+                <Text style={{fontSize:9,color:"black",bottom:16,left:12}}>30 Minuten</Text>
               </TouchableOpacity>
-            </View>   
+            </View>
             <View style={{flexDirection: "row", alignContent:"space-between"}}>
               <Switch style={styles.switch1to2} thumbColor= "#8E1290" onValueChange={value => this.setState({alarmton:value})} value={this.state.alarmton}></Switch>
               <Text style={{textAlign:"center",marginTop:18,fontWeight:"bold",fontSize:12,marginLeft:2}}>Alarmton</Text>
               <TouchableOpacity style={styles.musicButton}>
-                <Text style={{fontSize:12,color:"#8E1290",bottom:16,left:12}}>Morning Sun</Text>
+                <Text style={{fontSize:12,color:"#8E1290",left:12}}>Morning Sun</Text>
               </TouchableOpacity>
             </View>
             <View style={{flexDirection: "row", alignContent:"space-between"}}>
@@ -172,8 +174,8 @@ const styles = StyleSheet.create({
     width: 56,
     height: 56,
     position: "absolute",
-    left: 150,
-    top: 540,
+    left: WIDTH/2-28,
+    top: HEIGHT*0.9,
     opacity: 1,
     backgroundColor: "rgba(126,6,141,1)"
   },
@@ -182,8 +184,8 @@ const styles = StyleSheet.create({
     width: 56,
     height: 56,
     position: "absolute",
-    left: 130,
-    top: 500,
+    left: WIDTH/2-56,
+    top: HEIGHT*0.85,
     opacity: 1,
     backgroundColor: "rgba(126,6,141,1)"
   },
@@ -232,7 +234,7 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     position:"absolute",
     top:25,
-    left:225,
+    left:250,
       alignItems: "center",
       justifyContent: "center",
       borderRadius: 28,
@@ -261,23 +263,27 @@ const styles = StyleSheet.create({
   switch1to2:{
     transform: [{ scaleX: 1.2 }, { scaleY: 1.2 }],
     marginLeft:15,
+    marginRight:15,
     marginTop:20 
   },
 
   switch3:{
     transform: [{ scaleX: 1.2 }, { scaleY: 1.2 }],
     marginLeft:15,
+    marginRight:15,
     marginTop:0
   },
 
   switch4:{
     transform:[{scaleX:1.2}, {scaleY:1.2}],
     marginLeft:15,
+    marginRight:15,
     marginTop:15
   },
 
   slider:{
     left:55,
+    marginTop:15,
     bottom:15,
     width: 190
   },
@@ -285,7 +291,6 @@ const styles = StyleSheet.create({
   PowernapButton:{
     marginLeft:60,
     marginTop:24,
-    backgroundColor: "#8E1290",
     paddingTop:20 ,
     display: 'flex',
     height: 20,
@@ -297,7 +302,6 @@ const styles = StyleSheet.create({
     marginLeft:90,
     marginTop:18,
     backgroundColor: "white",
-    paddingTop:20 ,
     display: 'flex',
     height: 25,
     width: 85
@@ -307,7 +311,8 @@ const styles = StyleSheet.create({
     color:"gray",
     fontFamily: "roboto-regular",
     fontSize: 20,
-    left:60,
+    marginTop:20,
+    left:55,
     bottom:15    
   },
 

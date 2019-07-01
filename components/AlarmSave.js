@@ -32,7 +32,7 @@ export default class AlarmSave extends React.Component{
                     <Switch style={styles.switch} thumbColor= "#8E1290" onValueChange={this.toggleSwitch} value={this.state.switchVal}></Switch>
                 </View>
                 <View style={{flexDirection: 'row'}} >
-                <Text style={{paddingBottom: 20, fontSize:18, paddingLeft:110}}>Mo|Di|Mi|Do|Fr|Sa|So</Text>
+                <Text style={{paddingBottom: 20, fontSize:18, paddingLeft:110, marginTop:15}}>Mo|Di|Mi|Do|Fr|Sa|So</Text>
                 </View>
            </View> 
         );
@@ -54,7 +54,7 @@ const styles=StyleSheet.create({
 
     switch:{
     transform: [{ scaleX: 1.2 }, { scaleY: 1.2 }],
-    left: 280,
+    left: 250,
     marginTop:30,
     position: 'absolute'
     },
