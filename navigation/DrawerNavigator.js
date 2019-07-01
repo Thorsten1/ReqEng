@@ -2,6 +2,8 @@ import React from 'react';
 import { Platform, Dimensions } from 'react-native';
 import {createDrawerNavigator, createAppContainer} from 'react-navigation';
 
+
+import Startscreen from '../screens/Startscreen';
 import Wecker from '../screens/Wecker';
 import Einschlafhilfe from '../screens/Einschlafhilfe';
 import PowerNap from '../screens/PowerNap';
@@ -9,7 +11,7 @@ import Statistik from '../screens/Statistik';
 import Kalender from '../screens/Kalender';
 import SmartHome from '../screens/SmartHome';
 import Community from '../screens/Community';
-
+import Cam from '../screens/Camera';
 import MenuDrawer from '../components/MenuDrawer';
 
 const WIDTH = Dimensions.get('window').width;
@@ -22,6 +24,9 @@ const DrawerConfig = {
 }
 
 const DrawerNavigator = createDrawerNavigator({
+	Startscreen: {
+		screen: Startscreen,
+		},
 	Wecker: {
 		screen: Wecker,
 		},
@@ -42,6 +47,9 @@ const DrawerNavigator = createDrawerNavigator({
 		},
 	Community: {
 		screen: Community,
+		},
+	Cam: {
+		screen: Cam,
 		},
 	},
 	DrawerConfig
