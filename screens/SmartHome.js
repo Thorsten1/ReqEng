@@ -7,7 +7,7 @@ export default class SmartHome extends React.Component {
     return (
       <View style={styles.container}>
         <MenuButton navigation={this.props.navigation} />
-        <Text style={styles.text}>Hello From the SmartHome side! </Text>
+        <Text style={styles.text}>Die SmartHome Funktion wird ihnen schon bald zur Verfügung stehen! </Text>
       </View>
     );
   }
@@ -16,11 +16,12 @@ export default class SmartHome extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#261568',
+    backgroundColor: "rgba(58,53,111,1)",
     alignItems: 'center',
     justifyContent: 'center',
   },
   text: {
     fontSize: 30,
+    textAlign: 'center',
   },
 });
